@@ -1,0 +1,137 @@
+# --- All changes for Charmed Apache Kafka ---
+changes:
+  # Features
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-2285"
+    title: "Refer to Charmhub space from GitHub"
+    prs: [200]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-3333"
+    title: "Add integration test for broken tls"
+    prs: [188]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-3721"
+    title: "chore: use tools-log4j.properties for run_bin_command"
+    prs: [201]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-3735"
+    title: "Integration of custom alerting rules and dashboards"
+    prs: [180]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-3780"
+    title: "Set workload version in install hook"
+    prs: [182]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-3857"
+    title: "Test consistency between workload and metadata versions"
+    prs: [186]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-3926"
+    title: "Enforce zookeeper client interface"
+    prs: [196]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-3928"
+    title: "feat: secrets integration"
+    prs: [189]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-5702"
+    title: "chore: Active Controllers alert set to == 0"
+    prs: [252]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "CSS-6503"
+    title: "Add OAuth support for non-charmed external clients"
+    prs: [168]
+  - component: "kafka"
+    type: "feature"
+    ticket_id: "DPE-5757"
+    title: "Add `extra-listeners` configuration option"
+    prs: [269]
+  
+  # Bug fixes
+  - component: "kafka"
+    type: "bugfix"
+    ticket_id: "DPE-3880"
+    title: "Remove instance field from Grafana dashboard"
+    prs: [191]
+  - component: "kafka"
+    type: "bugfix"
+    ticket_id: "DPE-3880"
+    title: "Remove all instances of $job variable in dashboard"
+    prs: [181]
+  - component: "kafka"
+    type: "bugfix"
+    ticket_id: "DPE-3900"
+    title: "Remove APT references"
+    prs: [183]
+  - component: "kafka"
+    type: "bugfix"
+    ticket_id: "DPE-3932"
+    title: "Fix unsupported character on matrix channel"
+    prs: [187]
+  - component: "kafka"
+    type: "bugfix"
+    ticket_id: "DPE-4133"
+    title: "Do not change permissions on existing folders when reusing storage"
+    prs: [195]
+  - component: "kafka"
+    type: "bugfix"
+    ticket_id: "DPE-4362"
+    title: "fix: alive, restart and alive handling"
+    prs: [202]
+  - component: "kafka"
+    type: "bugfix"
+    ticket_id: "DPE-5757"
+    title: "fix: ensure certs are refreshed on SANs DNS changes"
+    prs: [276]
+
+  # Other improvements
+  - component: "kafka"
+    type: "other"
+    ticket_id: "MISC"
+    title: "Test on Juju 3.4"
+    prs: [190]
+  - component: "kafka"
+    type: "other"
+    ticket_id: "MISC"
+    title: "Update package dependencies"
+    prs: []
+  - component: "kafka"
+    type: "other"
+    ticket_id: "DPE-3588"
+    title: "Release documentation update"
+    prs: [175]
+  - component: "kafka"
+    type: "other"
+    ticket_id: "MISC"
+    title: "CI improvements"
+    prs: [209]
+  - component: "kafka"
+    type: "other"
+    ticket_id: "DPE-3214"
+    title: "Release 3.6.1"
+    prs: [179]
+  - component: "kafka"
+    type: "other"
+    ticket_id: "DPE-5565"
+    title: "Upgrade data platform libs to v38"
+    prs: []
+  - component: "kafka"
+    type: "other"
+    ticket_id: "discourse-gatekeeper"
+    title: "Migrate charm docs"
+    prs: [210, 203, 198, 194, 192]
+  - component: "kafka"
+    type: "other"
+    ticket_id: "DPE-3932"
+    title: "Update information in metadata.yaml"
+    prs: []

@@ -1,0 +1,97 @@
+# --- All changes for Charmed Apache ZooKeeper ---
+changes:
+  # Features
+  - component: "zookeeper"
+    type: "feature"
+    ticket_id: "DPE-2285"
+    title: "Refer to Charmhub space from GitHub"
+    prs: [143]
+  - component: "zookeeper"
+    type: "feature"
+    ticket_id: "DPE-2597"
+    title: "Re use existing storage"
+    prs: [138]
+  - component: "zookeeper"
+    type: "feature"
+    ticket_id: "DPE-3737"
+    title: "Implement ZK client interface"
+    prs: [142]
+  - component: "zookeeper"
+    type: "feature"
+    ticket_id: "DPE-3782"
+    title: "Set workload version in install and configure hooks"
+    prs: [130]
+  - component: "zookeeper"
+    type: "feature"
+    ticket_id: "DPE-3857"
+    title: "Test consistency between workload and metadata versions"
+    prs: [136]
+  - component: "zookeeper"
+    type: "feature"
+    ticket_id: "DPE-3869"
+    title: "Secrets in ZK"
+    prs: [129]
+  - component: "zookeeper"
+    type: "feature"
+    ticket_id: "DPE-5626"
+    title: "chore: update ZooKeeper up alerting"
+    prs: [166]
+
+  # Bug fixes
+  - component: "zookeeper"
+    type: "bugfix"
+    ticket_id: "DPE-3880"
+    title: "Remove job variable from dashboard"
+    prs: [134]
+  - component: "zookeeper"
+    type: "bugfix"
+    ticket_id: "DPE-3900"
+    title: "Remove APT references"
+    prs: [131]
+  - component: "zookeeper"
+    type: "bugfix"
+    ticket_id: "DPE-3932"
+    title: "Fix unsupported character on matrix channel"
+    prs: [133, 135]
+  - component: "zookeeper"
+    type: "bugfix"
+    ticket_id: "DPE-4183"
+    title: "fix: only handle quorum removal on relation-departed"
+    prs: [146]
+  - component: "zookeeper"
+    type: "bugfix"
+    ticket_id: "DPE-4362"
+    title: "fix: alive, restart and alive handling"
+    prs: [145]
+
+  # Other improvements
+  - component: "zookeeper"
+    type: "other"
+    ticket_id: "DPE-5565"
+    title: "Stable release upgrade"
+    prs: []
+  - component: "zookeeper"
+    type: "other"
+    title: "chore: bump {spellexception}`dp_libs` version"
+    prs: [147]
+  - component: "zookeeper"
+    type: "other"
+    ticket_id: "MISC"
+    title: "General update dependencies"
+    prs: [144]
+  - component: "zookeeper"
+    type: "other"
+    ticket_id: "MISC"
+    title: "Update CI to Juju 3.4"
+    prs: [137]
+  - component: "zookeeper"
+    type: "other"
+    ticket_id: "DPE-3932"
+    title: "Update information in metadata.yaml"
+    prs: []
+  - component: "zookeeper"
+    type: "other"
+
+    ticket_id: "MISC"
+    title: "Update cryptography to 42.0.5"
+    prs: []

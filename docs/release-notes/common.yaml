@@ -1,5 +1,51 @@
-# --- Common information that applies to all releases ----
+# --- Common information that applies to all releases -----
 
-charm_name: Fake
-release_condition: latest/stable
-show_internal: true
+# Header information
+anchor: (reference-release-notes-revision-195-149)=
+revision_header: "Revision 195/149"
+release_date: "Wed, Dec 18th, 2024"
+
+# Introduction summary
+summary: "This release comes with a number of new features for the charms, Juju secrets support, OAuth/OIDC authentication support, various improvements in the UI/UX, and dependencies upgrades."
+
+# Top-level navigation links
+links:
+  charmhub: "https://charmhub.io/kafka"
+  deploy_guide: "how-to-deploy-index"
+  upgrade_instructions: "how-to-upgrade"
+  system_requirements: "reference-requirements"
+
+# Compatibility section intro text
+compatibility_intro: "Principal charms support the latest LTS series “22.04” only."
+
+# --- Component Definitions ---
+# Defines each product, its repo/jira links, and compatibility table data.
+# The key (e.g., 'kafka') is used to link artifacts to this component.
+components:
+  kafka:
+    name: "Charmed Apache Kafka"
+    intro: "New features and bug fixes in the Charmed Apache Kafka bundle:"
+    repo_url: "https://github.com/canonical/kafka-operator"
+    jira_base_url: "https://warthogs.atlassian.net/browse"
+    compatibility:
+      revision: 195
+      revision_url: "https://github.com/canonical/kafka-operator/tree/7948dfbbfaaa53fccc88beaa90f80de1e70beaa9"
+      arch: "AMD64"
+      juju: "2.9.45+, Juju 3.1+"
+      artifacts: |
+        Distribution: [3.6.1-ubuntu0](https://launchpad.net/kafka-releases/3.x/3.6.1-ubuntu0).
+        Snap: [revision 37](https://snapcraft.io/charmed-kafka).
+  
+  zookeeper:
+    name: "Charmed Apache ZooKeeper"
+    intro: "New features and bug fixes in the Charmed Apache ZooKeeper bundle:"
+    repo_url: "https://github.com/canonical/zookeeper-operator"
+    jira_base_url: "https://warthogs.atlassian.net/browse"
+    compatibility:
+      revision: 149
+      revision_url: "https://github.com/canonical/zookeeper-operator/tree/40576c1c87badd1e2352afc013ed0754808ef44c"
+      arch: "AMD64"
+      juju: "2.9.45+, Juju 3.1+"
+      artifacts: |
+        Distribution: [3.8.4-ubuntu0](https://launchpad.net/zookeeper-releases/3.x/3.8.4-ubuntu0).
+        Snap: [revision 34](https://snapcraft.io/charmed-zookeeper).

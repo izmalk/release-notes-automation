@@ -1,0 +1,92 @@
+{{ anchor }}
+# {{ revision_header }}
+<sub>{{ release_date }}</sub>
+
+{{ summary }}
+
+[Charmhub]({{ links.charmhub }}) | [Deploy guide]({{ links.deploy_guide }}) | [Upgrade instructions]({{ links.upgrade_instructions }}) | [System requirements]({{ links.system_requirements }})
+
+{# Loop through each component defined in release.yaml (e.g., 'kafka', 'zookeeper') #}
+{% for component_key, component in components.items() %}
+## {{ component.name }}
+
+{{ component.intro }}
+
+{# Filter the master 'changes' list to get only changes for the current component #}
+{% set component_changes = changes | selectattr("component", "equalto", component_key) | list %}
+
+{# --- Render Features --- #}
+{% set features = component_changes | selectattr("type", "equalto", "feature") | list %}
+{% if features %}
+### Features
+
+{% for change in features %}
+* {%- set has_ticket = change.ticket_id is defined and change.ticket_id %}
+{%- if has_ticket %}
+{# Auto-link JIRA IDs, but just display non-JIRA IDs like 'MISC' #}
+{%- set is_jira = change.ticket_id.startswith('DPE-') or change.ticket_id.startswith('CSS-') %}
+ [{{ change.ticket_id }}]
+{%- if is_jira %}({{ component.jira_base_url }}/{{ change.ticket_id }}){% endif %} {% endif -%}
+{{ change.title }}
+{%- if change.prs %} (
+{%- for pr in change.prs -%}
+[#{{ pr }}]({{ component.repo_url }}/pull/{{ pr }})
+{%- if not loop.last %}, {% endif -%}
+{%- endfor -%}
+){% endif %}
+{% endfor %}
+{% endif %}
+
+{# --- Render Bug fixes --- #}
+{% set bugfixes = component_changes | selectattr("type", "equalto", "bugfix") | list %}
+{% if bugfixes %}
+### Bug fixes
+
+{% for change in bugfixes %}
+* {%- set has_ticket = change.ticket_id is defined and change.ticket_id %}
+{%- if has_ticket %}
+{%- set is_jira = change.ticket_id.startswith('DPE-') or change.ticket_id.startswith('CSS-') %}
+ [{{ change.ticket_id }}]
+{%- if is_jira %}({{ component.jira_base_url }}/{{ change.ticket_id }}){% endif %} {% endif -%}
+{{ change.title }}
+{%- if change.prs %} (
+{%- for pr in change.prs -%}
+[#{{ pr }}]({{ component.repo_url }}/pull/{{ pr }})
+{%- if not loop.last %}, {% endif -%}
+{%- endfor -%}
+){% endif %}
+{% endfor %}
+{% endif %}
+
+{# --- Render Other improvements --- #}
+{% set others = component_changes | selectattr("type", "equalto", "other") | list %}
+{% if others %}
+### Other improvements
+
+{% for change in others %}
+* {%- set has_ticket = change.ticket_id is defined and change.ticket_id %}
+{%- if has_ticket %}
+{%- set is_jira = change.ticket_id.startswith('DPE-') or change.ticket_id.startswith('CSS-') %}
+ [{{ change.ticket_id }}]
+{%- if is_jira %}({{ component.jira_base_url }}/{{ change.ticket_id }}){% endif %} {% endif -%}
+{{ change.title }}
+{%- if change.prs %} (
+{%- for pr in change.prs -%}
+[#{{ pr }}]({{ component.repo_url }}/pull/{{ pr }})
+{%- if not loop.last %}, {% endif -%}
+{%- endfor -%}
+){% endif %}
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+
+## Compatibility
+
+{{ compatibility_intro }}
+
+| Charm | Revision | Hardware architecture | Juju version | Artefacts |
+|---|---|---|---|---|
+{% for component in components.values() %}
+| {{ component.name }} | [{{ component.compatibility.revision }}]({{ component.compatibility.revision_url }}) | {{ component.compatibility.arch }} | {{ component.compatibility.juju }} | {{ component.compatibility.artifacts | replace("\n", "<br>") }} |
+{% endfor %}
